@@ -10,7 +10,13 @@ connectDB();
 const app = express();
 
 // Use CORS middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://travel-book-places.netlify.app/",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+  })
+);
 
 // Body Parser
 app.use(express.json());
